@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Santa Milanga · Restaurante argentino en Alicante</title>
+<meta name="description" content="Las mejores milanesas de Alicante. Comida argentina, pizzas y hamburguesas en Carrer Major, 27. Abrimos todos los santos días. Reservas: 625 671 614.">
+<meta name="theme-color" content="#14254d">
+<meta property="og:title" content="Santa Milanga · Las mejores milanesas de Alicante">
+<meta property="og:description" content="Comida argentina, pizzas y hamburguesas. Carrer Major, 27 · Alicante.">
+<meta property="og:image" content="img/post06.jpg">
+<link rel="icon" href="img/perfil.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+  :root{
+    --cream:#faf6ee;
+    --navy:#14254d;
+    --navy-2:#0c1733;
+    --celeste:#74acdf;
+    --celeste-l:#dcebf8;
+    --sun:#f6b40e;
+    --ink:#1b2236;
+    --muted:#5d6478;
+    --line:#e9e1d1;
+    --shadow:0 26px 60px -30px rgba(12,23,51,.55);
+    --wrap:min(100% - 40px, 1200px);
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  ::selection{background:var(--sun);color:var(--navy-2)}
+  :focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:6px}
+  .wrap{width:var(--wrap);margin-inline:auto}
+  h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;color:var(--navy);margin:0;letter-spacing:-.02em;line-height:1}
+  h2{font-size:clamp(38px,5.4vw,70px);margin:14px 0 16px}
+  .hl{background:linear-gradient(180deg,transparent 60%,var(--sun) 60%,var(--sun) 94%,transparent 94%);-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 .08em;border-radius:4px}
+  .hero .hl,.promo .hl,.visit-card .hl{background:linear-gradient(180deg,transparent 10%,var(--sun) 10%,var(--sun) 96%,transparent 96%)}
+  img.zoom,.dish img.zoom{transform:scale(1.7);transform-origin:50% 100%}
+  .dish:hover img.zoom{transform:scale(1.76)}
+  .tag{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:var(--celeste-l);color:var(--navy);font-weight:600;font-size:13.5px}
+  .lead{color:var(--muted);font-size:18px;max-width:50ch;margin:0}
+  .center{text-align:center}.center .lead{margin-inline:auto}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 28px;border-radius:999px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:17px;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .2s, box-shadow .2s, background .2s, color .2s}
+  .btn svg{width:21px;height:21px}
+  .btn-sun{background:var(--sun);color:var(--navy-2);box-shadow:0 6px 0 #c98f00}
+  .btn-sun:hover{transform:translateY(-2px);box-shadow:0 8px 0 #c98f00}
+  .btn-sun:active{transform:translateY(4px);box-shadow:0 2px 0 #c98f00}
+  .btn-navy{background:var(--navy);color:#fff;box-shadow:0 6px 0 #06102a}
+  .btn-navy:hover{transform:translateY(-2px);box-shadow:0 8px 0 #06102a}
+  .btn-line{border-color:currentColor;color:#fff}
+  .btn-line:hover{background:#fff;color:var(--navy)}
+
+  /* nav */
+  header.nav{position:sticky;top:0;z-index:50;background:var(--navy);color:#fff}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:74px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .brand img{width:46px;height:46px;border-radius:50%;border:2px solid #fff}
+  .brand b{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.01em;white-space:nowrap}
+  .links{display:flex;align-items:center;gap:26px}
+  .links a:not(.btn){text-decoration:none;font-weight:500;font-size:15px;opacity:.9;white-space:nowrap}
+  .links a:not(.btn):hover{opacity:1;color:var(--sun)}
+  .links .btn{min-height:46px;padding:0 20px;font-size:15px;box-shadow:0 4px 0 #c98f00}
+
+  /* hero */
+  .hero{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:auto -10% -60% auto;width:900px;height:900px;border-radius:50%;background:radial-gradient(closest-side,rgba(116,172,223,.28),transparent 70%)}
+  .sunburst{position:absolute;right:6%;top:40px;width:180px;height:180px;opacity:.16;animation:spin 60s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .hero .wrap{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;padding:70px 0 110px}
+  .hero .tag{background:rgba(255,255,255,.1);color:#fff}
+  .hero h1{color:#fff;font-size:clamp(54px,8.2vw,118px);margin:20px 0 22px}
+  .hero h1 .hl{color:var(--navy-2)}
+  .hero p{font-size:clamp(17px,1.7vw,20px);color:#d2dcef;max-width:42ch;margin:0 0 34px}
+  .actions{display:flex;flex-wrap:wrap;gap:16px}
+  .rating{display:flex;align-items:center;gap:14px;margin-top:38px}
+  .stars{display:flex;gap:2px;color:var(--sun)}
+  .stars svg{width:20px;height:20px}
+  .rating b{font-family:'Bricolage Grotesque',sans-serif;font-size:28px}
+  .rating span{color:#b9c6df;font-size:14.5px;line-height:1.3}
+  .hero-plate{position:relative;justify-self:center;width:min(100%,520px)}
+  .plate{position:relative;aspect-ratio:1;border-radius:50%;background:var(--cream);overflow:hidden;box-shadow:0 40px 80px -30px rgba(0,0,0,.6),0 0 0 14px rgba(255,255,255,.06),0 0 0 28px rgba(255,255,255,.04)}
+  .plate img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 100%;transform:scale(1.08)}
+  .sticker{position:absolute;display:grid;place-items:center;text-align:center;border-radius:50%;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;line-height:1.05;box-shadow:0 14px 30px -12px rgba(0,0,0,.5)}
+  .sticker.s1{left:-14px;top:24px;width:124px;height:124px;background:var(--sun);color:var(--navy-2);font-size:17px;transform:rotate(-12deg);animation:wob 6s ease-in-out infinite}
+  .sticker.s1 small{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+  .sticker.s2{right:-6px;bottom:30px;width:110px;height:110px;background:#fff;color:var(--navy);font-size:15px;transform:rotate(10deg);animation:wob 6s ease-in-out -3s infinite}
+  .sticker.s2 span{font-size:30px;display:block}
+  @keyframes wob{50%{transform:rotate(-4deg) translateY(-8px)}}
+  .flag-strip{height:14px;background:linear-gradient(180deg,var(--celeste) 0 33.3%,#fff 33.3% 66.6%,var(--celeste) 66.6%)}
+
+  .section{padding:clamp(80px,10vw,124px) 0}
+
+  /* favoritos */
+  .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:54px}
+  .dish{background:#fff;border-radius:28px;overflow:hidden;border:2px solid var(--navy);box-shadow:8px 8px 0 var(--navy);transition:transform .25s, box-shadow .25s}
+  .dish:hover{transform:translate(-3px,-3px);box-shadow:11px 11px 0 var(--navy)}
+  .dish .img{aspect-ratio:1;background:var(--cream);overflow:hidden}
+  .dish img{width:100%;height:100%;object-fit:cover;object-position:50% 100%;transform:scale(1.14);transform-origin:50% 100%;transition:transform .6s}
+  .dish:hover img{transform:scale(1.19)}
+  .dish .body{padding:20px 22px 24px;border-top:2px solid var(--navy)}
+  .dish h3{font-size:27px}
+  .dish p{margin:8px 0 0;color:var(--muted);font-size:15px}
+  .dish .chip{display:inline-block;margin-bottom:10px;padding:4px 11px;border-radius:999px;background:var(--celeste-l);font-size:12.5px;font-weight:600;color:var(--navy)}
+  .dish.star .chip{background:var(--sun)}
+
+  /* milanesas */
+  .milas{background:var(--celeste-l)}
+  .milas .wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:60px;align-items:center}
+  .mila-list{display:grid;gap:12px;margin:30px 0 34px}
+  .mila{display:flex;align-items:center;gap:16px;background:#fff;border-radius:18px;padding:16px 20px;border:2px solid var(--navy)}
+  .mila .n{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--navy);color:var(--sun);font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:18px}
+  .mila b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:21px;color:var(--navy);line-height:1.1}
+  .mila span{color:var(--muted);font-size:14.5px}
+  .mila-photo{position:relative}
+  .mila-photo .main{border-radius:32px;overflow:hidden;aspect-ratio:1;border:2px solid var(--navy);box-shadow:12px 12px 0 var(--navy);background:var(--cream)}
+  .mila-photo .main img{width:100%;height:100%;object-fit:cover;object-position:50% 100%}
+  .bubble{position:absolute;left:-22px;bottom:40px;max-width:240px;background:#fff;border:2px solid var(--navy);border-radius:20px 20px 20px 4px;padding:14px 16px;font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:17px;color:var(--navy);box-shadow:6px 6px 0 var(--navy)}
+
+  /* el equipo / promos */
+  .promo{background:var(--navy);color:#fff;overflow:hidden}
+  .promo .wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .promo h2{color:#fff}
+  .promo h2 .hl{color:var(--navy-2)}
+  .promo p{color:#cdd8ec;font-size:18px;max-width:44ch}
+  .reels{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .reels a{position:relative;aspect-ratio:9/16;border-radius:20px;overflow:hidden;display:block;border:2px solid rgba(255,255,255,.18)}
+  .reels a:nth-child(2){transform:translateY(34px)}
+  .reels img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+  .reels a:hover img{transform:scale(1.05)}
+  .reels a::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(12,23,51,.7))}
+  .reels .play{position:absolute;z-index:1;left:12px;bottom:12px;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--sun);color:var(--navy-2)}
+  .reels .play svg{width:16px;height:16px;margin-left:2px}
+  .beer{display:flex;align-items:center;gap:14px;margin:26px 0 34px;padding:16px 20px;border-radius:18px;background:rgba(246,180,14,.14);border:2px dashed var(--sun);color:#fff;font-weight:600;max-width:460px}
+  .beer span{font-size:30px}
+
+  /* opiniones */
+  .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:50px}
+  .review{background:#fff;border-radius:24px;padding:28px;border:2px solid var(--line)}
+  .review .stars{margin-bottom:14px}
+  .review p{margin:0;font-family:'Bricolage Grotesque',sans-serif;font-size:21px;font-weight:600;color:var(--navy);line-height:1.3}
+  .review small{display:block;margin-top:14px;color:var(--muted);font-size:13.5px}
+  .g-score{display:inline-flex;align-items:center;gap:14px;margin-top:34px;padding:12px 20px;border-radius:999px;background:#fff;border:2px solid var(--line);text-decoration:none;font-weight:600}
+  .g-score b{font-family:'Bricolage Grotesque',sans-serif;font-size:24px;color:var(--navy)}
+
+  /* visita */
+  .visit{display:grid;grid-template-columns:1fr 1.15fr;gap:30px}
+  .visit-card{background:var(--navy);color:#dbe4f3;border-radius:32px;padding:clamp(30px,4vw,48px);position:relative;overflow:hidden}
+  .visit-card h2{color:#fff;font-size:clamp(36px,4.2vw,54px)}
+  .visit-card .hl{color:var(--navy-2)}
+  .row{display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+  .row:last-of-type{border-bottom:0}
+  .row .ic{display:grid;place-items:center;width:46px;height:46px;border-radius:14px;background:rgba(255,255,255,.08);color:var(--sun);flex:none}
+  .row .ic svg{width:21px;height:21px}
+  .row b{display:block;color:#fff;font-size:15px}
+  .row a{text-decoration:none;color:#dbe4f3}
+  .row a:hover{color:var(--sun)}
+  .row .big{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:28px;color:#fff}
+  .visit-card .btn{margin-top:22px}
+  .map{border-radius:32px;overflow:hidden;border:2px solid var(--navy);min-height:460px;background:var(--celeste-l)}
+  .map iframe{width:100%;height:100%;min-height:460px;border:0;display:block}
+
+  footer{background:var(--navy-2);color:#a8b5cf;padding:46px 0 110px;font-size:14px}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  footer .brand b{color:#fff}
+  footer a{color:#dbe4f3;text-decoration:none}
+  footer a:hover{color:var(--sun)}
+  footer nav{display:flex;gap:22px;flex-wrap:wrap}
+
+  .mobile-cta{position:fixed;left:12px;right:12px;bottom:14px;z-index:60;display:none;transform:translateY(160%);transition:transform .4s}
+  .mobile-cta.show{transform:none}
+  .mobile-cta .btn{width:100%}
+
+  .js .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+  .js .reveal.in,.js .hero .reveal{opacity:1;transform:none}
+  .js .d1{transition-delay:.08s}.js .d2{transition-delay:.16s}.js .d3{transition-delay:.24s}
+
+  @media (max-width:1000px){
+    .links a.opt{display:none}
+    .hero .wrap,.milas .wrap,.promo .wrap,.visit{grid-template-columns:1fr}
+    .hero .wrap{padding:50px 0 90px}
+    .hero-plate{width:min(100%,440px)}
+    .menu-grid{grid-template-columns:1fr 1fr}
+    .reviews{grid-template-columns:1fr}
+    .mila-photo{max-width:460px}
+  }
+  @media (max-width:640px){
+    :root{--wrap:calc(100% - 32px)}
+    body{font-size:16px}
+    .links a:not(.btn){display:none}
+    .nav .wrap{height:66px}
+    .brand img{width:40px;height:40px}
+    .brand b{font-size:20px}
+    .links .btn{min-height:42px;padding:0 16px;font-size:14px}
+    .actions .btn{flex:1 1 100%}
+    .sunburst{width:120px;height:120px;right:-20px}
+    .sticker.s1{width:100px;height:100px;font-size:14px;left:-4px;top:4px}
+    .sticker.s2{width:92px;height:92px;font-size:13px;right:0}
+    .sticker.s2 span{font-size:24px}
+    .menu-grid{grid-template-columns:1fr 1fr;gap:14px}
+    .dish{border-radius:20px;box-shadow:5px 5px 0 var(--navy)}
+    .dish .body{padding:14px 14px 16px}
+    .dish h3{font-size:19px}
+    .dish p{display:none}
+    .dish .chip{font-size:11px;margin-bottom:6px}
+    .bubble{left:0;bottom:16px;font-size:15px}
+    .reels{gap:8px}
+    .map,.map iframe{min-height:320px}
+    .mobile-cta{display:block}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    .js .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.2 1.3-6.6-4.9-4.6 6.6-.8z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15a1 1 0 0 0 1.5.9l12-7.5a1 1 0 0 0 0-1.8l-12-7.5A1 1 0 0 0 7 4.5z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 100 100"><g fill="#f6b40e"><circle cx="50" cy="50" r="18"/><g id="ray"><path d="M50 2l4 22h-8z"/></g><use href="#ray" transform="rotate(30 50 50)"/><use href="#ray" transform="rotate(60 50 50)"/><use href="#ray" transform="rotate(90 50 50)"/><use href="#ray" transform="rotate(120 50 50)"/><use href="#ray" transform="rotate(150 50 50)"/><use href="#ray" transform="rotate(180 50 50)"/><use href="#ray" transform="rotate(210 50 50)"/><use href="#ray" transform="rotate(240 50 50)"/><use href="#ray" transform="rotate(270 50 50)"/><use href="#ray" transform="rotate(300 50 50)"/><use href="#ray" transform="rotate(330 50 50)"/></g></symbol>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Santa Milanga, inicio"><img src="img/perfil.jpg" alt="" width="46" height="46"><b>Santa Milanga</b></a>
+    <nav class="links" aria-label="Principal">
+      <a href="#carta">La carta</a>
+      <a href="#milanesas" class="opt">Milanesas</a>
+      <a href="#opiniones" class="opt">Opiniones</a>
+      <a href="#visitanos">Visítanos</a>
+      <a class="btn btn-sun" href="tel:+34625671614"><svg><use href="#i-phone"/></svg>Reservar</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero" aria-labelledby="hero-title">
+    <svg class="sunburst" aria-hidden="true"><use href="#i-sun"/></svg>
+    <div class="wrap">
+      <div>
+        <span class="tag reveal"><svg width="16" height="16" aria-hidden="true"><use href="#i-sun"/></svg>Restaurante argentino · Alicante</span>
+        <h1 id="hero-title" class="reveal">Las mejores <span class="hl">milanesas</span> de Alicante</h1>
+        <p class="reveal">Comida argentina de verdad, pizzas y hamburguesas en pleno centro. Porciones generosas, mucho sabor y un trato que te hace sentir como en casa.</p>
+        <div class="actions reveal">
+          <a class="btn btn-sun" href="tel:+34625671614"><svg><use href="#i-phone"/></svg>Reservar: 625 671 614</a>
+          <a class="btn btn-line" href="#carta">Ver la carta</a>
+        </div>
+        <div class="rating reveal">
+          <b>4,7</b>
+          <div><div class="stars" aria-label="4,7 de 5 estrellas"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div><span>Más de 250 opiniones en Google</span></div>
+        </div>
+      </div>
+      <div class="hero-plate reveal">
+        <div class="plate"><img src="img/post06.jpg" alt="Tabla de carne con chimichurri, chorizos y papas fritas" width="512" height="640"></div>
+        <div class="sticker s1"><div><small>Abrimos</small>todos los<br>santos días</div></div>
+        <div class="sticker s2"><div><span>😇</span>Santo<br>sabor</div></div>
+      </div>
+    </div>
+  </section>
+  <div class="flag-strip" aria-hidden="true"></div>
+
+  <!-- CARTA -->
+  <section class="section" id="carta" aria-labelledby="menu-title">
+    <div class="wrap">
+      <div class="center">
+        <span class="tag reveal">La carta</span>
+        <h2 id="menu-title" class="reveal d1">Para comer <span class="hl">como en Buenos Aires</span></h2>
+        <p class="lead reveal d2">Clásicos argentinos, cosas para compartir y algún que otro capricho dulce. Pregúntanos por los platos del día.</p>
+      </div>
+      <div class="menu-grid">
+        <article class="dish star reveal"><div class="img"><img class="zoom" src="img/post02.jpg" alt="Milanesa con papas fritas" loading="lazy"></div><div class="body"><span class="chip">⭐ La estrella</span><h3>Milanesas</h3><p>Napolitana, completa, con jamón serrano… elige la tuya.</p></div></article>
+        <article class="dish reveal d1"><div class="img"><img src="img/post06.jpg" alt="Tabla de carne" loading="lazy"></div><div class="body"><span class="chip">Para compartir</span><h3>Tabla de carne</h3><p>Carnes a la parrilla, chorizos, chimichurri y papas fritas.</p></div></article>
+        <article class="dish reveal d2"><div class="img"><img src="img/post10.jpg" alt="Provoleta" loading="lazy"></div><div class="body"><span class="chip">Entrante</span><h3>Provoleta</h3><p>Queso provolone fundido, el entrante argentino por excelencia.</p></div></article>
+        <article class="dish reveal"><div class="img"><img src="img/post04.jpg" alt="Salmón con patatas y ensalada" loading="lazy"></div><div class="body"><span class="chip">Del mar</span><h3>Salmón</h3><p>Con patatas fritas y ensalada fresca.</p></div></article>
+        <article class="dish reveal d1"><div class="img"><img src="img/post12.jpg" alt="Calamares a la andaluza" loading="lazy"></div><div class="body"><span class="chip">Para picar</span><h3>Calamares a la andaluza</h3><p>Crujientes por fuera, tiernos por dentro.</p></div></article>
+        <article class="dish reveal d2"><div class="img"><img src="img/post08.jpg" alt="Panqueque con dulce de leche" loading="lazy"></div><div class="body"><span class="chip">Postre</span><h3>Panqueque con dulce de leche</h3><p>El postre que no puede faltar.</p></div></article>
+      </div>
+      <p class="center reveal" style="margin-top:40px;color:var(--muted)">Además: <b style="color:var(--navy)">pizzas, hamburguesas, entrecot, pulpo</b> y mucho más.</p>
+    </div>
+  </section>
+
+  <!-- MILANESAS -->
+  <section class="section milas" id="milanesas" aria-labelledby="mila-title">
+    <div class="wrap">
+      <div class="mila-photo reveal">
+        <div class="main"><img class="zoom" src="img/post02.jpg" alt="Milanesa con papas fritas y ensalada" loading="lazy"></div>
+        <div class="bubble">Si fueras una milanesa, ¿cuál serías? 🤔</div>
+      </div>
+      <div>
+        <span class="tag reveal">😇 Nuestra especialidad</span>
+        <h2 id="mila-title" class="reveal d1">Santa <span class="hl">milanesa</span></h2>
+        <p class="lead reveal d2">Grandes, crujientes y bien acompañadas. Son la razón de nuestro nombre y lo que más nos piden.</p>
+        <div class="mila-list">
+          <div class="mila reveal d1"><span class="n">1</span><div><b>Napolitana</b><span>Con salsa de tomate, jamón y queso gratinado</span></div></div>
+          <div class="mila reveal d2"><span class="n">2</span><div><b>Completa</b><span>De ternera, con todos sus acompañamientos</span></div></div>
+          <div class="mila reveal d2"><span class="n">3</span><div><b>Con jamón serrano</b><span>El toque español que nos encanta</span></div></div>
+          <div class="mila reveal d3"><span class="n">4</span><div><b>Escalope</b><span>Fina, dorada y clásica</span></div></div>
+        </div>
+        <a class="btn btn-navy reveal d3" href="tel:+34625671614"><svg><use href="#i-phone"/></svg>Reserva tu mesa</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMO / REELS -->
+  <section class="section promo" aria-labelledby="promo-title">
+    <div class="wrap">
+      <div>
+        <span class="tag reveal" style="background:rgba(255,255,255,.1);color:#fff">Argentina 🤝 España</span>
+        <h2 id="promo-title" class="reveal d1">Argentina y España <span class="hl">en la misma mesa</span></h2>
+        <p class="reveal d2">Un equipo joven, con mucho humor y muchas ganas de que comas rico. Síguenos en Instagram para ver las novedades y las promos de la semana.</p>
+        <div class="beer reveal d2"><span>🍺</span>Atento a nuestras promos en Instagram: a veces la caña va por la casa.</div>
+        <a class="btn btn-sun reveal d3" href="https://www.instagram.com/santamilanga2026/" target="_blank" rel="noopener noreferrer"><svg><use href="#i-ig"/></svg>@santamilanga2026</a>
+      </div>
+      <div class="reels reveal d1">
+        <a href="https://www.instagram.com/santamilanga2026/" target="_blank" rel="noopener noreferrer" aria-label="Ver vídeos en Instagram"><img src="img/post01.jpg" alt="" loading="lazy"><span class="play"><svg><use href="#i-play"/></svg></span></a>
+        <a href="https://www.instagram.com/santamilanga2026/" target="_blank" rel="noopener noreferrer" aria-label="Ver vídeos en Instagram"><img src="img/post07.jpg" alt="" loading="lazy"><span class="play"><svg><use href="#i-play"/></svg></span></a>
+        <a href="https://www.instagram.com/santamilanga2026/" target="_blank" rel="noopener noreferrer" aria-label="Ver vídeos en Instagram"><img src="img/post05.jpg" alt="" loading="lazy"><span class="play"><svg><use href="#i-play"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPINIONES -->
+  <section class="section" id="opiniones" aria-labelledby="rev-title">
+    <div class="wrap">
+      <div class="center">
+        <span class="tag reveal">⭐ Lo que dicen</span>
+        <h2 id="rev-title" class="reveal d1">Palabra de <span class="hl">santo</span></h2>
+      </div>
+      <div class="reviews">
+        <figure class="review reveal" style="margin:0"><div class="stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div><p>“Muy buen ambiente y la milanesa con jamón serrano, deliciosa.”</p><small>Opinión en Google</small></figure>
+        <figure class="review reveal d1" style="margin:0"><div class="stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div><p>“Servicio excelente, pedimos la milanesa escalope y entrecot, nos encantó.”</p><small>Opinión en Google</small></figure>
+        <figure class="review reveal d2" style="margin:0"><div class="stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div><p>“Muy buena comida, porciones generosas.”</p><small>Opinión en Google</small></figure>
+      </div>
+      <div class="center reveal"><a class="g-score" href="https://www.google.com/maps/search/?api=1&query=Santa+Milanga+Carrer+Major+27+Alicante" target="_blank" rel="noopener noreferrer"><b>4,7</b><span class="stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>Ver todas las opiniones en Google</a></div>
+    </div>
+  </section>
+
+  <!-- VISÍTANOS -->
+  <section class="section" id="visitanos" style="padding-top:0" aria-labelledby="visit-title">
+    <div class="wrap visit">
+      <div class="visit-card reveal">
+        <h2 id="visit-title">Te esperamos en <span class="hl">el centro</span></h2>
+        <div class="row"><span class="ic"><svg><use href="#i-pin"/></svg></span><div><b>Dirección</b><a href="https://www.google.com/maps/search/?api=1&query=Santa+Milanga+Carrer+Major+27+Alicante" target="_blank" rel="noopener noreferrer">Carrer Major, 27 · 03002 Alicante</a></div></div>
+        <div class="row"><span class="ic"><svg><use href="#i-phone"/></svg></span><div><b>Reservas</b><a class="big" href="tel:+34625671614">625 671 614</a></div></div>
+        <div class="row"><span class="ic"><svg><use href="#i-clock"/></svg></span><div><b>Horario</b>Abrimos todos los santos días</div></div>
+        <div class="row"><span class="ic"><svg><use href="#i-ig"/></svg></span><div><b>Instagram</b><a href="https://www.instagram.com/santamilanga2026/" target="_blank" rel="noopener noreferrer">@santamilanga2026</a></div></div>
+        <a class="btn btn-sun" href="tel:+34625671614"><svg><use href="#i-phone"/></svg>Llamar y reservar</a>
+      </div>
+      <div class="map reveal d1"><iframe title="Mapa de Santa Milanga" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Santa+Milanga,+Carrer+Major+27,+03002+Alicante&z=17&output=embed"></iframe></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#inicio"><img src="img/perfil.jpg" alt="" width="46" height="46"><b>Santa Milanga</b></a>
+    <nav aria-label="Pie de página"><a href="#carta">Carta</a><a href="#milanesas">Milanesas</a><a href="#opiniones">Opiniones</a><a href="#visitanos">Visítanos</a></nav>
+    <p style="width:100%;margin:8px 0 0;font-size:13px">© <span id="year">2026</span> Santa Milanga · Restaurante argentino · Carrer Major, 27 · Alicante</p>
+  </div>
+</footer>
+
+<div class="mobile-cta" id="mcta"><a class="btn btn-sun" href="tel:+34625671614" tabindex="-1"><svg><use href="#i-phone"/></svg>Reservar: 625 671 614</a></div>
+
+<script>
+(function(){
+  var y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear();
+  var m=document.getElementById('mcta'), hero=document.querySelector('.hero'), v=document.getElementById('visitanos');
+  function onScroll(){ var r=v.getBoundingClientRect(); m.classList.toggle('show', hero.getBoundingClientRect().bottom<0 && r.top>innerHeight*.6); }
+  addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.06});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
