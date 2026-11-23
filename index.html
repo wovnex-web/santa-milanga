@@ -113,14 +113,26 @@
   .milas{background:var(--celeste-l)}
   .milas .wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:60px;align-items:center}
   .mila-list{display:grid;gap:12px;margin:30px 0 34px}
-  .mila{display:flex;align-items:center;gap:16px;background:#fff;border-radius:18px;padding:16px 20px;border:2px solid var(--navy)}
-  .mila .n{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--navy);color:var(--sun);font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:18px}
-  .mila b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:21px;color:var(--navy);line-height:1.1}
-  .mila span{color:var(--muted);font-size:14.5px}
+  .mila{display:flex;align-items:center;gap:16px;width:100%;text-align:left;font:inherit;cursor:pointer;background:#fff;border-radius:18px;padding:14px 18px;border:2px solid var(--navy);box-shadow:4px 4px 0 var(--navy);transition:transform .15s, box-shadow .15s, background .2s}
+  .mila:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--navy)}
+  .mila:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--navy)}
+  .mila[aria-pressed="true"]{background:var(--sun)}
+  .mila[aria-pressed="true"] .n{background:var(--navy-2);color:#fff}
+  .mila .n{flex:none;display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--navy);color:var(--sun);font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:18px}
+  .mila .txt{display:block}
+  .mila b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:20px;color:var(--navy);line-height:1.15}
+  .mila .txt span{display:block;color:var(--muted);font-size:14.5px;line-height:1.35;margin-top:2px}
+  .mila[aria-pressed="true"] .txt span{color:var(--navy)}
+  .mila-result{margin:-14px 0 28px;padding:18px 20px;border-radius:18px;background:var(--navy);color:#fff;animation:pop .35s ease}
+  .mila-result p{margin:0 0 14px;font-family:'Bricolage Grotesque',sans-serif;font-size:20px;line-height:1.3}
+  .mila-result b{color:var(--sun)}
+  .mila-result .btn{min-height:48px;font-size:15px}
+  @keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  [hidden]{display:none!important}
   .mila-photo{position:relative}
-  .mila-photo .main{border-radius:32px;overflow:hidden;aspect-ratio:1;border:2px solid var(--navy);box-shadow:12px 12px 0 var(--navy);background:var(--cream)}
-  .mila-photo .main img{width:100%;height:100%;object-fit:cover;object-position:50% 100%}
-  .bubble{position:absolute;left:-22px;bottom:40px;max-width:240px;background:#fff;border:2px solid var(--navy);border-radius:20px 20px 20px 4px;padding:14px 16px;font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:17px;color:var(--navy);box-shadow:6px 6px 0 var(--navy)}
+  .mila-photo .main{border-radius:32px;overflow:hidden;aspect-ratio:4/3;border:2px solid var(--navy);box-shadow:12px 12px 0 var(--navy);background:var(--cream)}
+  .mila-photo .main img{width:100%;height:100%;object-fit:cover;object-position:50% 100%;transform:scale(1.4);transform-origin:50% 56%}
+  .mila-badge{position:absolute;top:-14px;right:20px;background:var(--sun);color:var(--navy-2);font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;padding:8px 16px;border-radius:999px;border:2px solid var(--navy);transform:rotate(4deg)}
 
   /* el equipo / promos */
   .promo{background:var(--navy);color:#fff;overflow:hidden}
@@ -208,7 +220,8 @@
     .dish h3{font-size:19px}
     .dish p{display:none}
     .dish .chip{font-size:11px;margin-bottom:6px}
-    .bubble{left:0;bottom:16px;font-size:15px}
+    .mila b{font-size:18px}
+    .mila-photo .main{box-shadow:7px 7px 0 var(--navy)}
     .reels{gap:8px}
     .map,.map iframe{min-height:320px}
     .mobile-cta{display:block}
@@ -297,20 +310,24 @@
   <section class="section milas" id="milanesas" aria-labelledby="mila-title">
     <div class="wrap">
       <div class="mila-photo reveal">
-        <div class="main"><img class="zoom" src="img/post02.jpg" alt="Milanesa con papas fritas y ensalada" loading="lazy"></div>
-        <div class="bubble">Si fueras una milanesa, ¿cuál serías? 🤔</div>
+        <div class="main"><img src="img/post02.jpg" alt="Milanesa con papas fritas y ensalada" loading="lazy"></div>
+        <span class="mila-badge">⭐ La más pedida</span>
       </div>
       <div>
         <span class="tag reveal">😇 Nuestra especialidad</span>
-        <h2 id="mila-title" class="reveal d1">Santa <span class="hl">milanesa</span></h2>
-        <p class="lead reveal d2">Grandes, crujientes y bien acompañadas. Son la razón de nuestro nombre y lo que más nos piden.</p>
-        <div class="mila-list">
-          <div class="mila reveal d1"><span class="n">1</span><div><b>Napolitana</b><span>Con salsa de tomate, jamón y queso gratinado</span></div></div>
-          <div class="mila reveal d2"><span class="n">2</span><div><b>Completa</b><span>De ternera, con todos sus acompañamientos</span></div></div>
-          <div class="mila reveal d2"><span class="n">3</span><div><b>Con jamón serrano</b><span>El toque español que nos encanta</span></div></div>
-          <div class="mila reveal d3"><span class="n">4</span><div><b>Escalope</b><span>Fina, dorada y clásica</span></div></div>
+        <h2 id="mila-title" class="reveal d1">¿Qué <span class="hl">milanesa</span> serías?</h2>
+        <p class="lead reveal d2">Grandes, crujientes y bien acompañadas. Toca la que más va contigo y te decimos qué dice de ti.</p>
+        <div class="mila-list" role="group" aria-label="Elige tu milanesa">
+          <button class="mila reveal d1" type="button" aria-pressed="false" data-res="Eres una <b>Napolitana</b>: clásica, con carácter y siempre triunfas."><span class="n">1</span><span class="txt"><b>Napolitana</b><span>Con salsa de tomate, jamón y queso gratinado</span></span></button>
+          <button class="mila reveal d2" type="button" aria-pressed="false" data-res="Eres una <b>Completa</b>: lo quieres todo y no te conformas con menos."><span class="n">2</span><span class="txt"><b>Completa</b><span>De ternera, con todos sus acompañamientos</span></span></button>
+          <button class="mila reveal d2" type="button" aria-pressed="false" data-res="Eres una <b>Con jamón serrano</b>: medio argentino, medio español, y encantado con los dos."><span class="n">3</span><span class="txt"><b>Con jamón serrano</b><span>El toque español que nos encanta</span></span></button>
+          <button class="mila reveal d3" type="button" aria-pressed="false" data-res="Eres un <b>Escalope</b>: fino, elegante y sin complicaciones."><span class="n">4</span><span class="txt"><b>Escalope</b><span>Fina, dorada y clásica</span></span></button>
         </div>
-        <a class="btn btn-navy reveal d3" href="tel:+34625671614"><svg><use href="#i-phone"/></svg>Reserva tu mesa</a>
+        <div class="mila-result" id="mila-result" aria-live="polite" hidden>
+          <p id="mila-text"></p>
+          <a class="btn btn-sun" href="tel:+34625671614"><svg><use href="#i-phone"/></svg>Ven a probarla</a>
+        </div>
+        <a class="btn btn-navy reveal d3" id="mila-cta" href="tel:+34625671614"><svg><use href="#i-phone"/></svg>Reserva tu mesa</a>
       </div>
     </div>
   </section>
@@ -381,6 +398,12 @@
   var m=document.getElementById('mcta'), hero=document.querySelector('.hero'), v=document.getElementById('visitanos');
   function onScroll(){ var r=v.getBoundingClientRect(); m.classList.toggle('show', hero.getBoundingClientRect().bottom<0 && r.top>innerHeight*.6); }
   addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  /* ¿Qué milanesa serías? */
+  var milas=[].slice.call(document.querySelectorAll('.mila')), res=document.getElementById('mila-result'), rtx=document.getElementById('mila-text'), mcta=document.getElementById('mila-cta');
+  milas.forEach(function(b){b.addEventListener('click',function(){
+    milas.forEach(function(x){x.setAttribute('aria-pressed', x===b)});
+    rtx.innerHTML=b.dataset.res; res.hidden=false; mcta.hidden=true;
+  });});
   var els=document.querySelectorAll('.reveal');
   if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
   var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.06});
